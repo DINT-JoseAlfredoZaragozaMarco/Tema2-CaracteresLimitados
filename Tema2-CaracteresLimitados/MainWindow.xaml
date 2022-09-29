@@ -1,0 +1,20 @@
+﻿<Window x:Class="Tema2_CaracteresLimitados.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema2_CaracteresLimitados"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF9D3FC9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="inputTextBox" Height="321" Margin="62,49,46,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" TextChanged="inputChanged" KeyDown="IsEnter"/>
+        <TextBlock x:Name="contadorTextBlock" HorizontalAlignment="Left" Margin="612,375,0,0" TextWrapping="Wrap" Text="/140" VerticalAlignment="Top" Height="34" Width="99" FontSize="22" Foreground="White" TextAlignment="Center"/>
+
+    </Grid>
+</Window>
