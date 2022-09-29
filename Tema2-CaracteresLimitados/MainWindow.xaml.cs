@@ -32,12 +32,12 @@ namespace Tema2_CaracteresLimitados
         {
             this.numeroCaracteres = inputTextBox.Text.Length;
 
-            if(inputTextBox.Text.Length < MAXIMO_CARACTERES)
+            if(this.numeroCaracteres < MAXIMO_CARACTERES)
             {
                 contadorTextBlock.Text = "/140";
                 contadorTextBlock.Text = this.numeroCaracteres + contadorTextBlock.Text;
             }
-            else if(inputTextBox.Text.Length >= MAXIMO_CARACTERES)
+            else if(this.numeroCaracteres >= MAXIMO_CARACTERES)
             {
                 contadorTextBlock.Text = "/140";
                 contadorTextBlock.Text = this.numeroCaracteres + contadorTextBlock.Text;
@@ -47,10 +47,13 @@ namespace Tema2_CaracteresLimitados
 
         private void IsEnter(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if(numeroCaracteres < MAXIMO_CARACTERES)
             {
-                inputTextBox.Text += "\n";
-                //inputTextBox.Cursor
+                if (e.Key == Key.Enter)
+                {
+                    inputTextBox.Text += "\n";
+                    inputTextBox.CaretIndex = inputTextBox.Text.Length;
+                }
             }
         }
     }
